@@ -1,10 +1,13 @@
 #include <iostream>
-#include "Character.hpp"
+#include "./header/Character.hpp"
+#include "./header/Weapon.hpp"
 
 using namespace std;
 
 int main()
 {
-  Character stan = Character(100, 100, "Stan", "Dev");
-  stan.infos();
+  Weapon *gun = new Weapon("Pistolet", 10, 25, 50, 0);
+  Character *stan = new Character(100, 100, "Stan", gun);
+  stan->infos();
+  delete stan;
 }

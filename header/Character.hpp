@@ -3,24 +3,23 @@
 
 #include <iostream>
 #include <string>
+#include "../header/Weapon.hpp"
 
 class Character {
 private:
-	int healthy;
-	int maxHealthy;
-	std::string name;
-	// Weapon weapon;
-	std::string job;
-	// Team team;
+	int m_healthy;
+	int m_maxHealthy;
+	std::string m_name;
+	Weapon *m_weapon;
 
 public:
 	Character();
-	Character(int h, int mH, std::string n, std::string j);
+	Character(int h, int mH, std::string n, Weapon *weapon);
 	~Character();
 	int getHealthy() const;
 	int getMaxHealthy() const;
 	std::string getName() const;
-	std::string getJob() const;
+  Weapon getWeapon() const;
 	void infos() const;
 };
 #endif
